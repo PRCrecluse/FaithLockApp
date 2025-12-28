@@ -1,0 +1,99 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>FaithLock Support</title>
+<style>
+:root{--bg:#fff8e1;--card:#fff2c3;--text:#3f3f3f;--muted:#7c7c7c;--accent:#f59e0b;--border:#fde68a}
+*{box-sizing:border-box}
+body{margin:0;background:var(--bg);font-family:system-ui,-apple-system,Segoe UI,Roboto,Helvetica,Arial,sans-serif;color:var(--text)}
+header{padding:40px 20px;text-align:center;border-bottom:1px solid var(--border)}
+header h1{margin:0;font-size:28px;letter-spacing:.2px}
+header p{margin:10px 0 0;color:var(--muted)}
+main{max-width:860px;margin:0 auto;padding:24px}
+.grid{display:grid;grid-template-columns:1fr;gap:16px}
+@media(min-width:900px){.grid{grid-template-columns:2fr 1fr}}
+.card{background:var(--card);border:1px solid var(--border);border-radius:16px;padding:20px}
+.card h2{margin:0 0 10px;font-size:20px}
+label{display:block;margin:10px 0 6px;color:var(--muted);font-size:14px}
+input,textarea{width:100%;padding:12px;border:1px solid var(--border);border-radius:10px;background:#fffaf0;color:var(--text)}
+textarea{min-height:140px;resize:vertical}
+.btn{display:inline-block;padding:12px 16px;border:0;border-radius:10px;background:var(--accent);color:#2b2b2b;font-weight:600;cursor:pointer}
+.btn:disabled{opacity:.6;cursor:not-allowed}
+.list{display:grid;gap:10px}
+details{background:#fffaf0;border:1px solid var(--border);border-radius:12px;padding:12px}
+details summary{cursor:pointer;font-weight:600}
+footer{padding:24px;text-align:center;color:var(--muted)}
+.row{display:flex;gap:12px;flex-wrap:wrap}
+.row .btn{background:#fbbf24}
+.chip{display:inline-block;padding:6px 10px;border:1px solid var(--border);border-radius:999px;color:var(--muted);font-size:12px}
+</style>
+</head>
+<body>
+<header>
+  <h1>FaithLock Support</h1>
+  <p>Ask questions. Get help.</p>
+</header>
+<main>
+  <div class="grid">
+    <section class="card">
+      <h2>Contact Us</h2>
+      <p>Email <a href="mailto:prcrecluse@gmail.com">prcrecluse@gmail.com</a></p>
+      <div class="row">
+        <a class="btn" href="mailto:prcrecluse@gmail.com?subject=Support%20Request&body=Please%20describe%20your%20issue%20or%20question.">Send Email</a>
+        <span class="chip">Average response: within 24 hours</span>
+      </div>
+      <form id="contact" style="margin-top:16px">
+        <label>Your Name</label>
+        <input name="name" placeholder="Name">
+        <label>Your Email</label>
+        <input name="email" type="email" placeholder="name@example.com">
+        <label>Subject</label>
+        <input name="subject" placeholder="Subject">
+        <label>Message</label>
+        <textarea name="message" placeholder="Describe the issue as clearly as possible"></textarea>
+        <div style="margin-top:12px">
+          <button type="button" class="btn" id="send">Send</button>
+        </div>
+      </form>
+    </section>
+    <aside class="card">
+      <h2>Status</h2>
+      <div class="list">
+        <div>App Version <span class="chip">1.0</span></div>
+        <div>Platform <span class="chip">iOS</span></div>
+        <div>Support Channel <span class="chip">Email</span></div>
+      </div>
+    </aside>
+  </div>
+  <section class="card" style="margin-top:16px">
+    <h2>FAQ</h2>
+    <div class="list">
+      <details>
+        <summary>Why do I see the tracking permission prompt?</summary>
+        <p>To comply with iOS privacy rules and provide a personalized experience, the app requests App Tracking Transparency on first launch. You can allow or deny; denying does not affect core features.</p>
+      </details>
+      <details>
+        <summary>How can I contact support?</summary>
+        <p>Click “Send Email” on this page or email us directly at prcrecluse@gmail.com.</p>
+      </details>
+      <details>
+        <summary>Subscription and billing</summary>
+        <p>If you have subscription issues, include your purchase receipt or a screenshot in the email and we will assist promptly.</p>
+      </details>
+      <details>
+        <summary>Family controls and shielding</summary>
+        <p>The app can integrate with system family controls. To adjust shielding, use settings in the app and share your needs with us.</p>
+      </details>
+    </div>
+  </section>
+</main>
+<footer>
+  <div>© FaithLock</div>
+</footer>
+<script>
+var b=document.getElementById("send");if(b){b.addEventListener("click",function(){var f=document.getElementById("contact");var s=encodeURIComponent(f.subject.value||"Support Request");var body=encodeURIComponent("Name: "+(f.name.value||"")+"\nEmail: "+(f.email.value||"")+"\n\n"+(f.message.value||""));window.location.href="mailto:prcrecluse@gmail.com?subject="+s+"&body="+body})}
+</script>
+</body>
+</html>
